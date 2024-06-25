@@ -13,10 +13,15 @@ public class AccountService {
     }
 
     public void deposit(Double value) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        balance += value;
     }
 
     public Double withdraw(Double value) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (value <= balance){
+            balance -= value;
+        }else {
+            return 0.0;
+        }
+        return value;
     }
 }
